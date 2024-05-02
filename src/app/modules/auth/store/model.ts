@@ -1,5 +1,9 @@
 export interface UserDetails {
     accessToken: string;
-    name: string;
+    firstName: string;
     lastName: string;
 }
+export interface LoginForm {
+    username: string;
+    password: string;
+  }

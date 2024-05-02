@@ -1,19 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { setUSer } from '../store/auth.actions';
+import { AuthFacade } from '../store/auth.facade';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  loginform: FormGroup = new FormGroup({
+    'username': new FormControl(''),
+    'password': new FormControl('')
+  })
   constructor(
-    private store:Store
-  ){
+    private store:Store,
+    private authFacade: AuthFacade
+  ){}
 
+  ngOnInit(): void {
+      this.authFacade.selectLoginREsponse.subscribe((res)=>{
+        console.log(res)
+      })
   }
   onClick(){
-this.store.dispatch(setUSer())
+    console.log('this', this.loginform.value)
+    this.authFacade.login(this.loginform.value)
   }
 }
