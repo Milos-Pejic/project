@@ -17,14 +17,14 @@ export const initialState: AuthState = {
 
 export const reducer = createReducer (
     initialState,
-    on(AuthAction.setUSer, (state, action)=>{
+    on(AuthAction.loginUser, (state, action)=>{
         console.log('pera peric')
         return {
             ...state,
             loading: true
         }
     }),
-    on(AuthAction.setUserSuccess, (state, {user})=>{
+    on(AuthAction.loginUserSuccess, (state, {user})=>{
         return {
             ...state,
             user: user

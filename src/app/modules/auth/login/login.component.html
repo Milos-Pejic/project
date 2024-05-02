@@ -1,3 +1,14 @@
-<h1>Login works</h1>
-<button (click)="onClick()">Klikni me</button>
-<input matInput placeholder="Ex. Pizza" value="Sushi">
+<form [formGroup]="loginform" (ngSubmit)="onClick()">
+    <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+      </p>
+      <button type="submit" mat-raised-button>save</button>
+</form>

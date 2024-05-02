@@ -1,10 +1,10 @@
 import { createAction, props } from "@ngrx/store";
-import { UserDetails } from "./model";
+import { LoginForm, UserDetails } from "./model";
 
-export const setUSer = createAction(
-    '[Auth] Load User'
+export const loginUser = createAction(
+    '[Auth] Load User', props<{loginForm: LoginForm}>()
   );
 
-export const setUserSuccess = createAction(
+export const loginUserSuccess = createAction(
     '[Auth] Load User Success', props<{user: UserDetails}>()
 )
