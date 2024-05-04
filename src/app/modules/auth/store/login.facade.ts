@@ -1,8 +1,8 @@
 import { Store, select } from "@ngrx/store";
 import { LoginForm } from "./model";
-import * as AuthActions from '../store/auth.actions'
+import * as LoginActions from '../store/login.actions'
 import { Injectable } from "@angular/core";
-import * as AuthSelectors from '../store/auth.selectors'
+import * as AuthSelectors from './login.selectors'
 
 @Injectable()
 
@@ -16,6 +16,7 @@ export class AuthFacade {
     )
 
     login(loginForm: LoginForm){
-        this.store.dispatch(AuthActions.loginUser({loginForm}))
+        console.log("facada")
+        this.store.dispatch(LoginActions.loginUser({loginForm}))
     }
 }

@@ -1,23 +1,26 @@
 import { NgModule } from "@angular/core";
 import { LoginComponent } from "./login/login.component";
 import { StoreModule } from "@ngrx/store";
-import * as AutSore from '../auth/store/auth.reducers'
+import * as AutSore from './store/login.reducers'
 import { MatInputModule } from "@angular/material/input";
 import { ReactiveFormsModule } from "@angular/forms";
-import { AuthEffects } from "./store/auth.effects";
+import { AuthEffects } from "./store/login.effects";
 import { EffectsModule } from "@ngrx/effects";
-import { AuthFacade } from "./store/auth.facade";
+import { AuthFacade } from "./store/login.facade";
+import { LoginService } from "./login.servce";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
     declarations:[LoginComponent],
     imports: [
-        StoreModule.forFeature(AutSore.authFeaureKey, AutSore.reducer),
         MatInputModule,
         ReactiveFormsModule,
-        EffectsModule.forRoot(AuthEffects),
+        StoreModule.forFeature(AutSore.authFeaureKey, AutSore.reducer),
+        EffectsModule.forFeature(AuthEffects),
+        MatButtonModule
     ],
     exports:[LoginComponent],
-    providers:[AuthFacade]
+    providers:[AuthFacade, LoginService]
 })
 
 export class AuthModule {}

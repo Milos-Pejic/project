@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import * as AuthAction from '../store/auth.actions'
+import * as LoginAction from '../store/login.actions'
 import { UserDetails } from "./model";
 
 export const authFeaureKey = 'auth';
@@ -17,14 +17,14 @@ export const initialState: AuthState = {
 
 export const reducer = createReducer (
     initialState,
-    on(AuthAction.loginUser, (state, action)=>{
-        console.log('pera peric')
+    on(LoginAction.loginUser, (state, action)=>{
         return {
             ...state,
             loading: true
         }
     }),
-    on(AuthAction.loginUserSuccess, (state, {user})=>{
+    on(LoginAction.loginUserSuccess, (state, {user})=>{
+        console.log('Pejic MIlos')
         return {
             ...state,
             user: user
