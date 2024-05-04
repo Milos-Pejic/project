@@ -1,14 +1,16 @@
-<form [formGroup]="loginform" (ngSubmit)="onClick()">
+<div class="login-wrapper flex flex-row justify-center items-center h-full">
+  <form [formGroup]="loginform" (ngSubmit)="onClick()">
     <p>
-        <mat-form-field>
+        <mat-form-field class="w-64">
           <input type="text" matInput placeholder="Username" formControlName="username">
         </mat-form-field>
       </p>
 
       <p>
-        <mat-form-field>
+        <mat-form-field class="w-64">
           <input type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field>
       </p>
-      <button type="submit" mat-raised-button>save</button>
+      <button class="pejic w-64" [disabled]="!this.loginform.valid" type="submit" mat-stroked-button>Basic</button>
 </form>
+</div>

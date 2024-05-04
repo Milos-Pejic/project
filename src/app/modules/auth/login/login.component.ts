@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AuthFacade } from '../store/auth.facade';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AuthFacade } from '../store/login.facade';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +9,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginform: FormGroup = new FormGroup({
-    'username': new FormControl(''),
-    'password': new FormControl('')
+    'username': new FormControl('', Validators.required),
+    'password': new FormControl('', Validators.required)
   })
   constructor(
-    private store:Store,
-    private authFacade: AuthFacade
+    private authFacade: AuthFacade,
   ){}
 
   ngOnInit(): void {

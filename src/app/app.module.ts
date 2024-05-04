@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSlideToggleModule,
     MatButtonModule, 
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CoreModule
   ],
   providers: [
     provideAnimationsAsync()
