@@ -7,7 +7,7 @@ import { AuthService } from "../../../core/auth/auth.service";
 
 @Injectable()
 
-export class AuthEffects {
+export class LoginEffects {
     constructor(
         private actions$: Actions,
         private loginService: LoginService,

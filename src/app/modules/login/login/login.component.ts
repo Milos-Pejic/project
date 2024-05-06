@@ -21,8 +21,7 @@ export class LoginComponent implements OnInit {
         console.log(res)
       })
   }
-  onClick(){
-    console.log('this', this.loginform.value)
+  onLogin(){
     this.authFacade.login(this.loginform.value)
   }
 }

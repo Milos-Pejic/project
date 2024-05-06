@@ -1,5 +1,5 @@
 <div class="login-wrapper flex flex-row justify-center items-center h-full">
-  <form [formGroup]="loginform" (ngSubmit)="onClick()">
+  <form [formGroup]="loginform" (ngSubmit)="onLogin()">
     <p>
         <mat-form-field class="w-64">
           <input type="text" matInput placeholder="Username" formControlName="username">
@@ -11,6 +11,6 @@
           <input type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field>
       </p>
-      <button class="pejic w-64" [disabled]="!this.loginform.valid" type="submit" mat-stroked-button>Basic</button>
+      <button class="submit-buttond w-64" [disabled]="!this.loginform.valid" type="submit" mat-stroked-button>Basic</button>
 </form>
 </div>

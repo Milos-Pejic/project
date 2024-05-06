@@ -2,14 +2,14 @@ import { createReducer, on } from "@ngrx/store";
 import * as LoginAction from '../store/login.actions'
 import { UserDetails } from "./model";
 
-export const authFeaureKey = 'auth';
+export const loginFeatureKey = 'login';
 
-export interface AuthState {
+export interface LoginState {
     authToken: string | null;
     user: UserDetails | null;
     loading: boolean;
 }
-export const initialState: AuthState = {
+export const initialState: LoginState = {
     authToken: null,
     user: null,
     loading: false
@@ -31,4 +31,4 @@ export const reducer = createReducer (
         }
     })
 )
-export const getUser = (state: AuthState) => state.user;
+export const getUser = (state: LoginState) => state.user;
