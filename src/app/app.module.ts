@@ -28,7 +28,7 @@ import { LoginModule } from './modules/login/login.module';
     MatButtonModule, 
     ReactiveFormsModule,
     FormsModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [
     provideAnimationsAsync()

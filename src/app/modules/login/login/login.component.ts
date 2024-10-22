@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '../store/login.facade';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   })
   constructor(
     private authFacade: AuthFacade,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -23,5 +25,7 @@ export class LoginComponent implements OnInit {
   }
   onLogin(){
     this.authFacade.login(this.loginform.value)
+    this.router.navigateByUrl('organization')
+    // this.router.navigate(['/organization/selection'])
   }
 }

@@ -9,6 +9,7 @@ import { EffectsModule } from "@ngrx/effects";
 import { AuthFacade } from "./store/login.facade";
 import { LoginService } from "./login.servce";
 import { MatButtonModule } from "@angular/material/button";
+import { AuthRouthingModule } from "./login-routing.module";
 
 @NgModule({
     declarations:[LoginComponent],
@@ -17,7 +18,8 @@ import { MatButtonModule } from "@angular/material/button";
         ReactiveFormsModule,
         StoreModule.forFeature(LoginStore.loginFeatureKey, LoginStore.reducer),
         EffectsModule.forFeature(LoginEffects),
-        MatButtonModule
+        MatButtonModule,
+        AuthRouthingModule
     ],
     exports:[LoginComponent],
     providers:[AuthFacade, LoginService]
