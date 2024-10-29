@@ -10,6 +10,7 @@ import { AuthFacade } from "./store/login.facade";
 import { LoginService } from "./login.servce";
 import { MatButtonModule } from "@angular/material/button";
 import { AuthRouthingModule } from "./login-routing.module";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations:[LoginComponent],
@@ -19,7 +20,8 @@ import { AuthRouthingModule } from "./login-routing.module";
         StoreModule.forFeature(LoginStore.loginFeatureKey, LoginStore.reducer),
         EffectsModule.forFeature(LoginEffects),
         MatButtonModule,
-        AuthRouthingModule
+        AuthRouthingModule,
+        HttpClientModule
     ],
     exports:[LoginComponent],
     providers:[AuthFacade, LoginService]

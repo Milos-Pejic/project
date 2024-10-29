@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 import { OrganizationsComponent } from './components/organizations/organizations.component';
 import { OrganizationShellComponent } from './components/organization-shell/organization-shell.component'
-import { OrganizationRoutingModule } from "./organizations-routing";
+import { OrganizationRoutingModule } from "./organizations-routing.module";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -9,8 +10,9 @@ import { OrganizationRoutingModule } from "./organizations-routing";
     OrganizationShellComponent
   ],
   imports: [
-    OrganizationRoutingModule
+    CommonModule,
+    OrganizationRoutingModule,
   ]
 })
 
-export class OrgnanizationsModule {}
+export class OrganizationsModule {}

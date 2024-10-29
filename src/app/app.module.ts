@@ -12,6 +12,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './modules/login/login.module';
+import { OrganizationsModule } from './modules/organizations/organziations.module';
+import { AnimationsExerciseModule } from './modules/animations-exercise/animations-exercise.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { LoginModule } from './modules/login/login.module';
     ReactiveFormsModule,
     FormsModule,
     CoreModule,
+    OrganizationsModule,
+    AnimationsExerciseModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
