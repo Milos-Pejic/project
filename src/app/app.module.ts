@@ -15,6 +15,7 @@ import { LoginModule } from './modules/login/login.module';
 import { OrganizationsModule } from './modules/organizations/organziations.module';
 import { AnimationsExerciseModule } from './modules/animations-exercise/animations-exercise.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ExaiModule } from './@exai/exai.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     OrganizationsModule,
     AnimationsExerciseModule,
-    HttpClientModule
+    HttpClientModule,
+    ExaiModule
   ],
   providers: [
     provideAnimationsAsync()
