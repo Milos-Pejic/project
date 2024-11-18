@@ -11,6 +11,15 @@
           <input type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field>
       </p>
-      <button class="submit-buttond w-64" [disabled]="!this.loginform.valid" type="submit" mat-stroked-button>Basic</button>
+      <button class="submit-buttond w-64" [disabled]="!this.loginform.valid" type="submit" mat-stroked-button>Submit</button>
 </form>
+<div>
+  @for(vila of villas; track vila?.id){
+    <div>
+      {{vila.name}}
+    </div>
+  }
 </div>
+</div>
+
+

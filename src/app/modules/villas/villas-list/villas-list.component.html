@@ -1,0 +1,51 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef> details </th>
+        <td mat-cell *matCellDef="let element" 
+            matTooltip="{{ element.details }}" 
+            matTooltipPosition="above">
+          <span class="text-ellipsis">{{ element.details | slice:0:20 }}...</span>
+        </td>
+      </ng-container>
+      
+    <ng-container matColumnDef="rate">
+      <th mat-header-cell *matHeaderCellDef> rate </th>
+      <td mat-cell *matCellDef="let element"> {{element.rate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="sqft">
+        <th mat-header-cell *matHeaderCellDef> sqft </th>
+        <td mat-cell *matCellDef="let element"> {{element.sqft}} </td>
+      </ng-container>
+      <ng-container matColumnDef="occupancy">
+        <th mat-header-cell *matHeaderCellDef> occupancy </th>
+        <td mat-cell *matCellDef="let element"> {{element.occupancy}} </td>
+      </ng-container>
+      <ng-container matColumnDef="imageUrl">
+        <th mat-header-cell *matHeaderCellDef> imageUrl </th>
+        <td mat-cell *matCellDef="let element"> <a [href]="element.imageUrl" target="_blank" rel="noopener noreferrer">{{element.imageUrl}}</a> </td>
+      </ng-container>
+      <ng-container matColumnDef="ameinty">
+        <th mat-header-cell *matHeaderCellDef> ameinty </th>
+        <td mat-cell *matCellDef="let element"> {{element.ameinty}} </td>
+      </ng-container>
+      <ng-container matColumnDef="createdDate">
+        <th mat-header-cell *matHeaderCellDef> createdDate </th>
+        <td mat-cell *matCellDef="let element"> {{ element.createdDate | date:'dd.MM.yyyy HH:mm' }} </td>
+      </ng-container>
+      <ng-container matColumnDef="updatedDate">
+        <th mat-header-cell *matHeaderCellDef> updatedDate </th>
+        <td mat-cell *matCellDef="let element"> {{element.updatedDate}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

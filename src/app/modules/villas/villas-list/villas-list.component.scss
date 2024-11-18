@@ -1,0 +1,7 @@
+.text-ellipsis {
+    display: inline-block;
+    max-width: 150px; // Podesite širinu po potrebi
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
