@@ -1,2 +1,13 @@
-<p>Header</p>
-<router-outlet></router-outlet>
+<ng-template
+  #toolbarRef
+  class="toolbar"
+  [title]="title" 
+  [user]="user"
+>
+  <exai-toolbar></exai-toolbar>
+</ng-template>
+
+
+<custom-layout
+   [toolbarRef]="toolbarRef"
+></custom-layout>
