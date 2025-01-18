@@ -1,4 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+
+function withOpacityValue(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `rgb(var(${variable}))`;
+    }
+    return `rgba(var(${variable}), ${opacityValue})`;
+  };
+}
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
@@ -14,6 +23,9 @@ module.exports = {
       spacing: {
         gutter: 'var(--padding-gutter)',
       },
+      colors: {
+        primary: withOpacityValue('--color-primary'),
+      }
     },
   },
   plugins: [],
